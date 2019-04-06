@@ -5,8 +5,7 @@ function dump ($var) {
     echo '</pre>';
 }
 
-function nav_item(string $link, string $title, string $linkClass = ''): string
-{
+function nav_item(string $link, string $title, string $linkClass = ''): string {
     $classe = 'nav-item';
     if ($_SERVER['SCRIPT_NAME'] === $link) {
         $classe .= ' active';
@@ -18,8 +17,7 @@ function nav_item(string $link, string $title, string $linkClass = ''): string
 HTML;
 }
 
-function nav_menu(string $linkClass = ''): string
-{
+function nav_menu(string $linkClass = ''): string {
     return
         nav_item('/index.php', 'Accueil', $linkClass) .
         nav_item('/devinette.php', 'Devinette', $linkClass) .
@@ -27,8 +25,7 @@ function nav_menu(string $linkClass = ''): string
         nav_item('/contact.php', 'Contact', $linkClass);
 }
 
-function checkbox (string $name, string $value, array $data): string
-{
+function checkbox (string $name, string $value, array $data): string {
     $attributes = '';
 
     if (isset($data[$name]) && in_array($value, $data[$name])) {
@@ -40,8 +37,7 @@ function checkbox (string $name, string $value, array $data): string
 HTML;
 }
 
-function radio(string $name, string $value, array $data): string
-{
+function radio(string $name, string $value, array $data): string {
     $attributes = '';
 
     if (isset($data[$name]) && $value === $data[$name]) {
@@ -51,4 +47,17 @@ function radio(string $name, string $value, array $data): string
     return <<<HTML
         <input type="radio" name="$name" value="$value" $attributes>
 HTML;
+}
+
+function slots_html (array $slots) {
+    $sentences = [];
+
+    if (empty($slots)) {
+        return '<strong>Fermé</strong>';
+    }
+
+    foreach ($slots as $slot) {
+        $sentences[] = "de <strong>{$slot[0]}h</strong> à <strong>{$slot[1]}h</strong>";
+    }
+    return 'ouvert ' . implode(' & ', $sentences);
 }
