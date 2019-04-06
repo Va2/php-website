@@ -4,15 +4,15 @@ $error = null;
 $success = null;
 $value = null;
 
-if (isset($_GET['number'])) {
-    if ($_GET['number'] > $nbrToGuess) {
+if (isset($_POST['number'])) {
+    if ($_POST['number'] > $nbrToGuess) {
         $error = "Votre chiffre est trop grand.";
-    } elseif ($_GET['number'] < $nbrToGuess) {
+    } elseif ($_POST['number'] < $nbrToGuess) {
         $error = "Votre chiffre est trop petit.";
     } else {
         $success = "Bravo ! Vous avez deviné le bon chiffre : <strong>$nbrToGuess</strong>";
     }
-    $value = (int)$_GET['number'];
+    $value = (int)$_POST['number'];
 }
 
 require './header.php';
@@ -28,7 +28,7 @@ require './header.php';
     </div>
 <?php endif ?>
 
-<form action="" method="GET">
+<form action="" method="POST">
     <div class="form-group">
         <input type="number" class="form-control" name="number" placeholder="Entre 0 et 1000" value="<?= $value ?>">
     </div>
