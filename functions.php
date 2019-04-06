@@ -1,5 +1,5 @@
 <?php
-function nav_item(string $link, string $titre, string $linkClass = ''): string
+function nav_item(string $link, string $title, string $linkClass = ''): string
 {
     $classe = 'nav-item';
     if ($_SERVER['SCRIPT_NAME'] === $link) {
@@ -7,12 +7,12 @@ function nav_item(string $link, string $titre, string $linkClass = ''): string
     }
     return <<<HTML
     <li class="$classe">
-        <a class="$linkClass" href="$link">$titre</a>
+        <a class="$linkClass" href="$link">$title</a>
     </li>
 HTML;
 }
 
 function nav_menu(string $linkClass = ''): string
 {
-    return nav_item('/index.php', 'Accueil', $linkClass) . nav_item('/contact.php', 'Contact', $linkClass);
+    return nav_item('/index.php', 'Accueil', $linkClass) . nav_item('/jeu.php', 'Jeu', $linkClass) . nav_item('/contact.php', 'Contact', $linkClass);
 }
