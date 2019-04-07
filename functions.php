@@ -49,6 +49,17 @@ function radio(string $name, string $value, array $data): string {
 HTML;
 }
 
+function select (string $name, $value, array $options): string {
+    $html_options = [];
+
+    foreach ($options as $k => $option) {
+        $attributes = $k == $value ? 'selected' : '';
+
+        $html_options[] = "<option value='$k' $attributes>$option</option>";
+    }
+    return "<select class='form-control' name='$name'>" . implode($html_options) . "</select>";
+}
+
 function slots_html (array $slots) {
     $sentences = [];
 
@@ -60,4 +71,16 @@ function slots_html (array $slots) {
         $sentences[] = "de <strong>{$slot[0]}h</strong> à <strong>{$slot[1]}h</strong>";
     }
     return 'ouvert ' . implode(' & ', $sentences);
+}
+
+function in_slots (int $hour, array $slots): bool {
+    foreach ($slots as $slot) {
+        $start = $slot[0];
+        $end = $slot[1];
+
+        if ($hour >= $start && $hour < $end) {
+            return true;
+        }
+    }
+    return false;
 }
