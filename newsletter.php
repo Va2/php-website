@@ -1,4 +1,6 @@
 <?php
+$headTitle = "Newsletter";
+
 $error = null;
 $success = null;
 $email = null;

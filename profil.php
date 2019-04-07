@@ -1,4 +1,6 @@
 <?php
+$headTitle = "Profil";
+
 $name = null;
 if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
     unset($_COOKIE['user']);

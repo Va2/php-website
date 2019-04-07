@@ -1,4 +1,5 @@
 <?php
+$headTitle = "Composer votre glace";
 require_once './functions.php';
 
 // COMPOSEZ VOTRE GLACE

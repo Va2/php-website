@@ -1,6 +1,6 @@
 <?php
 // require_once './functions.php';
-// $title = 'Notre menu';
+// $headTitle = 'Notre menu';
 // $lines = file(__DIR__ . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'menu.csv');
 
 // foreach ($lines as $k => $line) {

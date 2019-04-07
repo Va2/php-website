@@ -1,4 +1,6 @@
 <?php
+$headTitle = "Page pour adultes";
+
 $age = null;
 if (!empty($_POST['birthday'])) {
     setcookie('birthday', $_POST['birthday']);

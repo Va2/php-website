@@ -1,7 +1,9 @@
 <?php
 $headTitle = "Nous contacter";
+
 require_once './data/config.php';
 require_once './functions.php';
+
 date_default_timezone_set('Europe/Paris');
 // Get today's hour: $hour
 $hour = (int)($_GET['hour'] ?? date('G'));

@@ -1,4 +1,6 @@
 <?php
+$headTitle = "Devinette";
+
 $nbrToGuess = 150;
 $error = null;
 $success = null;
