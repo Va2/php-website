@@ -50,7 +50,7 @@ foreach (['perfume', 'supplement', 'cone'] as $name) {
 
 $title = "Composer votre glace";
 
-require './header.php';
+require './elements/header.php';
 ?>
 
 <div class="row">
@@ -119,4 +119,4 @@ require './header.php';
     <?php var_dump($_POST) ?>
 </pre>
 
-<?php require './footer.php'; ?>
+<?php require './elements/footer.php'; ?>

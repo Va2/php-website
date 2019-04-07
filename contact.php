@@ -1,6 +1,6 @@
 <?php
 $headTitle = "Nous contacter";
-require_once './config.php';
+require_once './data/config.php';
 require_once './functions.php';
 date_default_timezone_set('Europe/Paris');
 // Get today's hour: $hour
@@ -11,7 +11,8 @@ $slots = SLOTS[$day];
 // Get opening status shop
 $open = in_slots($hour, $slots);
 $color = $open ? 'green' : 'red';
-require './header.php';
+
+require './elements/header.php';
 ?>
 
 <div class="row">
@@ -54,4 +55,4 @@ require './header.php';
     </div>
 </div>
 
-<?php require 'footer.php'; ?>
+<?php require './elements/footer.php'; ?>

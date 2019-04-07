@@ -15,7 +15,7 @@ if (isset($_POST['number'])) {
     $value = (int)$_POST['number'];
 }
 
-require './header.php';
+require './elements/header.php';
 ?>
 
 <?php if ($error) : ?>
@@ -35,4 +35,4 @@ require './header.php';
     <button type="submit" class="btn btn-primary">Deviner</button>
 </form>
 
-<?php require './footer.php'; ?>
+<?php require './elements/footer.php'; ?>
