@@ -24,6 +24,7 @@ function nav_menu(string $linkClass = ''): string {
         nav_item('/glace.php', 'Glace', $linkClass) .
         // nav_item('./menu.php', 'Menu', $linkClass) .
         nav_item('./newsletter.php', 'Newsletter', $linkClass) .
+        nav_item('./profil.php', 'Profil', $linkClass) .
         nav_item('/contact.php', 'Contact', $linkClass);
 }
 
