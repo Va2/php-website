@@ -1,7 +1,13 @@
 <?php
-function add_view () {
+function add_view (): void {
     $file = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'compteur';
-    $counter = 1;
+    $daily_file = $file . '-' . date('Y-m-d');
+    increment_counter($file);
+    increment_counter($daily_file);
+}
+
+function increment_counter (string $file): void {
+   $counter = 1;
     if (file_exists($file)){
         $counter = (int)file_get_contents($file);
         $counter++;
